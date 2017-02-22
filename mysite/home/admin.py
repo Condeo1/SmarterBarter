@@ -1,3 +1,5 @@
 from django.contrib import admin
+from home.models import Customers, CustomerServices
 
-# Register your models here.
+admin.site.register(Customers)
+admin.site.register(CustomerServices)
