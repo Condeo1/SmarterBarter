@@ -6,8 +6,6 @@
       <header class="main-header">
           <div class="hero-header">
           <div class="inner-hero-header">
-            <div class="container">
-              <div class="text-center logo"> <a href="index.html"><img src="{% static 'assets/theme/images/patner/4.png' %}" alt=""></a></div>
               <div class="relative">
                 <!-- form search -->
                 <form class="form-search-home" method="post" action="job_list.html">
@@ -15,19 +13,33 @@
                     <div class="col-md-12">
                       <div class="form-group">
                           <div style = "text-align:center;"><label><h3>Services</h3></label></div>
-                          <div class="btn-group">
-                        <button data-toggle="dropdown" class="btn btn-lg btn-block dropdown-toggle">Select All Options Wanted <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
+                              <button data-toggle="dropdown" class="btn btn-t-primary btn-lg btn-block dropdown-toggle">Please select any services</button>
+                              <ul class="dropdown-menu pull-center"> 
                                 <li>
-                                    <input type="checkbox" id="GD" name="GD" value="1">
-                                    <label for="GD">Graphic Designer</label>
+                                  <input type="checkbox" id="ex2_1" name="ex2" value="1">
+                                  <label for="ex2_1">Graphic Design</label>
                                 </li>
-                            </ul>
-                        </div>  
+                                <li>
+                                  <input type="checkbox" id="ex2_2" name="ex2" value="2">
+                                  <label for="ex2_2">Construction</label>
+                                </li>
+                                <li>
+                                  <input type="checkbox" id="ex2_3" name="ex2" value="3">
+                                  <label for="ex2_3">Gardening</label>
+                                </li>
+                                <li>
+                                  <input type="checkbox" id="ex2_4" name="ex2" value="4">
+                                  <label for="ex2_4">Artist</label>
+                                </li>
+                                <li>
+                                  <input type="checkbox" id="ex2_5" name="ex2" value="5">
+                                  <label for="ex2_5">Tutor</label>
+                                </li>    
+                              </ul>
                       </div>
                     </div>
                   <div class="form-group">
-                   <a class="btn btn-t-primary btn-lg btn-theme btn-pill btn-block" href="/job_board/">Find a Service</a>
+                   <a class="btn btn-t-primary btn-lg btn-theme btn-pill btn-block" href="#">Find a Service</a>
                   </div>
                     </div>
                 </form> <!-- end form search -->
@@ -58,7 +70,7 @@
             </div>
           </div>
         </div><!-- end box simple static -->
-
+          
       </div><!--end body-content -->
         
      <!-- main-footer -->
