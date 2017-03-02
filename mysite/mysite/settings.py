@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-with open('tempKEY.txt') as f:
+with open(os.path.join(BASE_DIR,'tempKEY.txt')) as f:
     SECRET_KEY = f.read().strip()
 
 DEBUG = True
