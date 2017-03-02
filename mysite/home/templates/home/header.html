@@ -17,9 +17,6 @@
 
     <!-- bootstrap -->
     <link href="{% static 'assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css' %}" rel="stylesheet">
-
-    <link href="{% static 'assets\plugins\bootstrap_dropdowns_enhancement-master\dist\css\dropdowns-enhancement.min.css' %}" rel="stylesheet">  
-    
   
 
     <!-- Icons -->
@@ -27,6 +24,9 @@
 
     <!-- lightbox -->
     <link href="{% static 'assets/plugins/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+      
+    <!-- Dropdowns enhancement -->
+    <link href="{% static 'assets/plugins/bootstrap_dropdowns_enhancement/dist/css/dropdowns-enhancement.css' %}" rel="stylesheet">  
       
     <!-- Twitterstrap -->
 
@@ -52,26 +52,15 @@
           <div class="container">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                 <li class=""><a href="/home"><strong>Find a Service</strong></a></li>
-                  
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Pages <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
+                  <li class="logo-xs"><a href="#"><img style="width: 75px;" src="{% static 'assets/theme/images/smarter.jpg' %}" alt=""></a>
+                  </li> 
                     <li><a href="/faq">About Us</a></li>
                     <li><a href="/contact">Contact Us</a></li>
                     <li><a href="/tos">Terms &amp; Privacy</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Features <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="/job_board/">Find a Service</a></li>
-                  </ul>
-                </li>
-              </ul>      
+                  </ul>      
               <ul class="nav navbar-nav navbar-right">
-                <li class="link-btn"><a href="login.html"><span class="btn btn-theme btn-pill btn-xs btn-line">Login</span></a></li>
-                <li class="link-btn"><a href="register.html"><span class="btn btn-theme  btn-pill btn-xs btn-line">Signup</span></a></li>
+                <li class="link-btn"><a href="/login"><span class="btn btn-theme btn-pill btn-xs btn-line">Login</span></a></li>
+                <li class="link-btn"><a href="/register"><span class="btn btn-theme  btn-pill btn-xs btn-line">Signup</span></a></li>
               </ul>
             </div>
           </div>
@@ -93,12 +82,13 @@
               </a>      
 
               <ul class="nav navbar-nav">
-                <li><a href="job_list.html"><strong>Find a Service</strong></a></li>
-                <li><a href="login.html"><strong>Login</strong></a></li>
-                <li><a href="signup.html"><strong>Signup</strong></a></li>
-                <li><a href="/faq">About Us</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-                <li><a href="/tos">Terms &amp; Privacy</a></li>
+                <li class="text-center logo-mobile"><a href="#"><img style="width: 75px;" src="{% static 'assets/theme/images/smarter.jpg' %}" alt=""></a>
+                  </li> 
+                <li><a class="nav-wordfix" href="/login"><strong>Login</strong></a></li>
+                <li><a class="nav-wordfix"  href="/signup"><strong>Signup</strong></a></li>
+                <li><a class="nav-wordfix" href="/faq">About Us</a></li>
+                <li><a class="nav-wordfix" href="/contact">Contact Us</a></li>
+                <li><a class="nav-wordfix" href="/tos">Terms &amp; Privacy</a></li>
               
               </ul>    
             </div>
@@ -123,6 +113,8 @@
     <script src="{% static 'assets/plugins/gmap3.min.js' %}"></script>
     <!-- maps single marker -->
     <script src="{% static 'assets/theme/js/map-detail.js' %}"></script>
+    <!-- bootstrap_enhancment -->
+    <script src="{% static 'assets/plugins/bootstrap_dropdowns_enhancement/dist/js/dropdowns-enhancement.js' %}"></script>    
         
 
       </div><!-- end wrapper page -->
