@@ -26,7 +26,7 @@ with open(os.path.join(BASE_DIR,'tempKEY.txt')) as f:
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['45.55.177.153']
+ALLOWED_HOSTS = ['45.55.177.153', '127.0.0.1']
 
 
 # Application definition

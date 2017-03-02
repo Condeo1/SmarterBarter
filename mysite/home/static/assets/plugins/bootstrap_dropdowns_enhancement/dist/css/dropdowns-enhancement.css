@@ -10,7 +10,7 @@
   min-width: 140px;
   max-width: 100%;    
   padding: 5px 0;
-  margin: 2px 0 0;
+  margin: 2px 0 -18px;
   font-size: 14px;
   text-align: left;
   list-style: none;
@@ -22,6 +22,8 @@
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
           box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  height: 150px;
+  overflow-y: scroll;    
 }
 .dropdown-menu > li > label {
   display: block;
