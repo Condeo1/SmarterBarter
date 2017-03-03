@@ -1,25 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'home/header.html' %}
+{% load staticfiles %}
 
-<head>
-    <title>Smarter Barter</title>
-    <meta charset = "utf-8" />
-</head>
+{% block content %}
+    <div class="body-content clearfix" >
+      <div class="bg-color2 block-section-lg line-bottom">
+        <div class="container">
+          <h2 class="text-center">Contact Us</h2>
+        <div class="well box-width bg-color3">    
+        <p class="text-center color-white">
+            Number: (555) 555-5555<br>
+            Email us using the comment box below!
+            </p>
+            </div>
+          </div>
+          
+          <br>
 
-<body class-"body" style ="background-color:#f6f6f6">
-    <div>
-        <h1>Smarter Barter</h1>
-        <h3>Contact us at:</h3>
-        Lorem Ipsum Academy<br>
-        123 Road Street<br>
-        (555)555-5555</p>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/login'>Login/Sign Up</a></li>
-        <li><a href='/search'>Search</a></li>
-        <li><a href='/faq'>FAQ</a></li>
-        <li><a href='/tos'>Terms of Service</a></li>
-        <li><a href='/contact'>Contact</a></li>
+        <form>      
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                               <div class="form-group">
+                                <h4 class="text-center">Comment Box</h4>
+                                <textarea class="form-control" rows="6" placeholder="Enter Any Additional Information"></textarea>
+                                </div>
+                                
+                                <br>
+                                
+                                <div class="form-action">
+                                    <a href="#modal" data-toggle="modal"><button class="btn btn-t-primary btn-theme">Send Email</button></a>
+                                </div>
+                                
+                            </div>    
+                        </div>
+                    </div>                    
+                </div>
+            </form>
     </div>
-</body>
 
-</html>
+ <!-- modal -->
+        <div class="modal fade" id="modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <form class="form-horizontal">
+                <div class="modal-header">
+                  <h3 class="text-center">Thank You for Your Email!</h3>
+                </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-sm btn-default btn-theme" data-dismiss="modal">Close</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+{% endblock %}

@@ -1,38 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'home/header.html' %}
+{% load staticfiles %}
 
-<head>
-    <title>Smarter Barter</title>
-    <meta charset = "utf-8" />
-</head>
+ {% block content %}
 
-<body class-"body" style ="background-color:#f6f6f6">
-    <div>
-        <h1>Smarter Barter</h1>
-        <h2>FAQ</h2>
-        <h3>What is Smarter Barter?</h3>
-        <p>Smarter Barter provides a platform for people to offer a service or services, such as catering or gardening,<br>
-        in exchange for another service or services, such as music lessions or mechanic work. Smarter Barter will<br>
-        attempt to match people as best as possible, and may create chains of people providing services in order<br>
+    <div class="body-content clearfix" >
+      <div class="bg-color2 block-section-lg line-bottom">
+        <div class="container">
+          <h2 class="text-center">About Us</h2>
+        <h3 class="text-center">What is Smarter Barter?</h3>
+        <div class="well box-width bg-color3">    
+        <p class="text-center color-white">     Smarter Barter provides a platform for people to offer a service or services, such as catering or gardening,
+        in exchange for another service or services, such as music lessions or mechanic work. Smarter Barter will
+        attempt to match people as best as possible, and may create chains of people providing services in order
         to satisfy requests.</p>
-        <h3>What does it cost?</h3>
-        <p>Our website itself doesn't cost anything to use, although the service you provide to someone may cost you money<br>
-        depending on the cost of materials for your service.</p>
-        <h3>How do I use it?</h3>
-        <p>After signing up with our website and posting the services you are able to provide, search for a service<br>
-        you require. The system will attempt to match you with another user who lives in the same zip code who is able<br>
-        to provide the service you need in exchange for a service you can provide.</p>
-        <p>In some cases, you may be paired with someone who needs your service but cannot provide the service you need.<br>
-        In those cases, the person you are paired with will be matched with a person who needs the service your partner<br>
-        provides, and if the third person provides the service you need, you will be matched with them as will. This chain<br>
-        can potentially continue for several people before it wraps back around to you.</p>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/login'>Login/Sign Up</a></li>
-        <li><a href='/search'>Search</a></li>
-        <li><a href='/faq'>FAQ</a></li>
-        <li><a href='/tos'>Terms of Service</a></li>
-        <li><a href='/contact'>Contact</a></li>
+            </div>
+          </div>
+        </div>
+      </div>
+            
+            
+<div class="body-content clearfix" >
+    <div class="bg-color3 block-section-lg line-bottom">
+        <div class="container">        
+        <h3 class="text-center color-white">What does it cost?</h3>
+        <div class="well box-width bg-color2">     
+        <p class="text-center color">Our website itself doesn't cost anything to use, although the service you provide to someone may cost you money depending on the cost of materials for your service </p>
+            </div>
+        </div>
     </div>
-</body>
-
-</html>
+</div>
+            
+<div class="body-content clearfix" >
+    <div class="bg-color2 block-section-lg line-bottom">
+        <div class="container"> 
+        <h3 class="text-center">How do I use it?</h3>
+        <div class="bg-color3 well box-width">     
+        <p class="text-center color-white">After signing up with our website and posting the services you are able to provide, search for a service you require. The system will attempt to match you with another user who lives in the same zip code who is able to provide the service you need in exchange for a service you can provide. In some cases, you may be paired with someone who needs your service but cannot provide the service you need. In those cases, the person you are paired with will be matched with a person who needs the service your partner provides, and if the third person provides the service you need, you will be matched with them as will. This chain can potentially continue for several people before it wraps back around to you.</p>
+            </div>
+          </div>
+        </div>    
+      </div><!--end body-content -->
+{% endblock %}

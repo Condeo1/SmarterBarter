@@ -2198,9 +2198,6 @@ a:focus {
 }
 .box-width {
   width: 50%;
-  margin: 0 0 0 22%;    
+  margin: 0 0 0 23%;    
   box-sizing: content-box;    
-}
-.word-fix{
-    padding-top: 25px;
 }

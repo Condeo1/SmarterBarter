@@ -52,15 +52,15 @@
           <div class="container">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li class="logo-xs"><a href="#"><img style="width: 75px;" src="{% static 'assets/theme/images/smarter.jpg' %}" alt=""></a>
+                  <li class="logo-xs"><a href="/"><img style="width: 75px;" src="{% static 'assets/theme/images/smarter.jpg' %}" alt=""></a>
                   </li> 
-                    <li><a href="/faq">About Us</a></li>
-                    <li><a href="/contact">Contact Us</a></li>
-                    <li><a href="/tos">Terms &amp; Privacy</a></li>
+                    <li class="word-fix"><a href="/faq">About Us</a></li>
+                    <li class="word-fix"><a href="/contact">Contact Us</a></li>
+                    <li class="word-fix"><a href="/tos">Terms of Service</a></li>
                   </ul>      
               <ul class="nav navbar-nav navbar-right">
-                <li class="link-btn"><a href="/login"><span class="btn btn-theme btn-pill btn-xs btn-line">Login</span></a></li>
-                <li class="link-btn"><a href="/register"><span class="btn btn-theme  btn-pill btn-xs btn-line">Signup</span></a></li>
+                <li class="link-btn word-fix"><a href="/login"><span class="btn btn-theme btn-pill btn-xs btn-line">Login</span></a></li>
+                <li class="link-btn word-fix"><a href="/register"><span class="btn btn-theme  btn-pill btn-xs btn-line">Signup</span></a></li>
               </ul>
             </div>
           </div>
@@ -70,25 +70,25 @@
         <!-- mobile navbar -->
         <div class="container">
           <nav class="mobile-nav hidden-md hidden-lg hidden-fix">
-            <a href="#" class="btn-nav-toogle first">
+            <a href="#" class="btn-nav-toogle first bg-color3">
               <span class="bars"></span>
               Menu
             </a>
             <div class="mobile-nav-block">
               <h4>Navigation</h4>
-              <a href="#" class="btn-nav-toogle">
+              <a href="/" class="btn-nav-toogle">
                 <span class="barsclose"></span>
                 Close
               </a>      
 
               <ul class="nav navbar-nav">
-                <li class="text-center logo-mobile"><a href="#"><img style="width: 75px;" src="{% static 'assets/theme/images/smarter.jpg' %}" alt=""></a>
+                <li class="text-center logo-mobile"><a href="/"><img style="width: 75px;" src="{% static 'assets/theme/images/smarter.jpg' %}" alt=""></a>
                   </li> 
                 <li><a class="nav-wordfix" href="/login"><strong>Login</strong></a></li>
                 <li><a class="nav-wordfix"  href="/signup"><strong>Signup</strong></a></li>
                 <li><a class="nav-wordfix" href="/faq">About Us</a></li>
                 <li><a class="nav-wordfix" href="/contact">Contact Us</a></li>
-                <li><a class="nav-wordfix" href="/tos">Terms &amp; Privacy</a></li>
+                <li><a class="nav-wordfix" href="/tos">Terms of Service</a></li>
               
               </ul>    
             </div>
@@ -97,6 +97,33 @@
     </header>  
 {% block content %}           
 {% endblock %}
+    <!-- main-footer -->
+      <footer class="main-footer">
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <ul class="list-inline link-footer text-center-xs">
+                <li><a href="/">Home</a></li>
+                <li><a href="/faq">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/tos">Terms of Service</a></li>
+  
+              </ul>
+            </div>
+            <div class="col-sm-6 ">
+              <p class="text-center-xs hidden-lg hidden-md hidden-sm">Stay Connect</p>
+              <div class="socials text-right text-center-xs">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer><!-- end main-footer -->    
         
    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{% static 'assets/plugins/jquery.js' %}"></script>
