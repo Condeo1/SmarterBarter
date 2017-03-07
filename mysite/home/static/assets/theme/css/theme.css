@@ -293,11 +293,12 @@ a:focus {
 /* 3.b form
 ----------------------------------------------------------------------------- */
 .form-control {
+  border: 1px solid #ccc;     
   background: #ffffff;
   height: 40px;    
   border-radius: 0;
   width: 100%;
-  font-size: 1em;
+  font-size: 1em;   
 }
 .form-control:focus {
   background: #f5f5f5;
@@ -2203,4 +2204,7 @@ a:focus {
 }
 .word-fix{
     padding-top: 25px;
+}
+.dropbox-top{
+    margin-top: 35px;
 }

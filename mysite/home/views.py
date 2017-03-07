@@ -14,6 +14,9 @@ def tos(request):
     
 def contact(request):
     return render(request, 'home/contact.html')
+
+def login(request):
+    return render(request, 'home/login.html')
     
 class UserFormView(View):
     form_class = UserForm
