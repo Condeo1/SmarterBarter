@@ -1,17 +1,36 @@
-{% extends "base.html" %}
-{% block title %}Login{% endblock %}
-{% block head %}Login{% endblock %}
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+
 {% block content %}
-    {% if form.errors %}
+{% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
-    {% endif %}
-    <form method="post" action=".">{% csrf_token %}
-        <table border="0">
-            <tr><th><label for="id_username">Username:</label></th><td>{{ form.username }}</td></tr>
-            <tr><th><label for="id_password">Password:</label></th><td>{{ form.password }}</td></tr>
-        </table>
-        <input type="submit" value="Login" />
-        <input type="hidden" name="next" value="/" />
-    </form>
-    <a href="/register">Register</a>
+{% endif %}
+    <div class="body-content clearfix" >
+      <div class="bg-color2 block-section-lg line-bottom">
+        <div class="container">
+          <h2 class="text-center">Login</h2>
+            <form method="post" action=".">{% csrf_token %}      
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="form-group has-feedback">
+                                    <label for="id_username">User Name</label>
+                                    <input type="text" class="form-control has-feedback-left" name="username" id="id_username" placeholder="">
+                                    <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                                  </div>
+                                <div class="form-group has-feedback">
+                                    <label for="id_password">Password</label>
+                                    <input type="password" class="form-control has-feedback-left" name="password" id="id_password" placeholder="Password">
+                                    <span class="fa fa-asterisk form-control-feedback left" aria-hidden="true"></span>
+                                  </div>
+                            </div>
+                        </div>
+                         <input type="submit" value="Login" />
+                         <input type="hidden" name="next" value="/" />
+                </div>
+            </form>
+          </div>
+        </div>
+</div>
 {% endblock %}

@@ -57,11 +57,18 @@
                     <li class="word-fix"><a href="/faq">About Us</a></li>
                     <li class="word-fix"><a href="/contact">Contact Us</a></li>
                     <li class="word-fix"><a href="/tos">Terms of Service</a></li>
-                  </ul>      
+                  </ul>
+            {% if user.username  %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="username"><p>Welcome {{ user.username }}</p></li>
+                    <li class="link-btn word-fix"><a href="/logout/"><span class="btn btn-theme btn-pill btn-xs btn-line">Logout</span></a></li>
+                </ul>    
+            {% else %}
               <ul class="nav navbar-nav navbar-right">
                 <li class="link-btn word-fix"><a href="/login"><span class="btn btn-theme btn-pill btn-xs btn-line">Login</span></a></li>
                 <li class="link-btn word-fix"><a href="/register"><span class="btn btn-theme  btn-pill btn-xs btn-line">Signup</span></a></li>
               </ul>
+            {% endif %}
             </div>
           </div>
         </nav><!-- end main navbar -->
@@ -84,8 +91,17 @@
               <ul class="nav navbar-nav">
                 <li class="text-center logo-mobile"><a href="/"><img style="width: 75px;" src="{% static 'assets/theme/images/smarter.jpg' %}" alt=""></a>
                   </li> 
-                <li><a class="nav-wordfix" href="/login"><strong>Login</strong></a></li>
-                <li><a class="nav-wordfix"  href="/register"><strong>Signup</strong></a></li>
+                {% if user.username  %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-username"><p>Welcome {{ user.username }}</p></li>
+                    <li><a  class="nav-wordfix" href="/logout/">Logout</a></li>
+                </ul>    
+            {% else %}
+              <ul class="nav navbar-nav navbar-right">
+                <li><a class="nav-wordfix" href="/login">Login</a></li>
+                <li><a class="nav-wordfix" href="/register">Signup</a></li>
+              </ul>
+            {% endif %}
                 <li><a class="nav-wordfix" href="/faq">About Us</a></li>
                 <li><a class="nav-wordfix" href="/contact">Contact Us</a></li>
                 <li><a class="nav-wordfix" href="/tos">Terms of Service</a></li>

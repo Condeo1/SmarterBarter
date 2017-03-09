@@ -2208,3 +2208,13 @@ a:focus {
 .dropbox-top{
     margin-top: 35px;
 }
+.username{
+    padding-top: 44px;
+    color: white;
+}
+.nav-username{
+    text-align: center;
+    color: green;
+    height: 50px;
+    width: 250px;
+}

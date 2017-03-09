@@ -22,9 +22,9 @@ def register(request):
             return HttpResponseRedirect('/register/success/')
     else:
         form = RegistrationForm()
-    variables = RequestContext(request, {
-    'form': form
-    })
+    variables =  RequestContext(request, {
+    'form': form,
+})
  
     return render_to_response(
     'home/register.html',
