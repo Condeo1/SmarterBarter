@@ -1,7 +1,51 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
 from django.views.generic import View
-from .forms import UserForm
+from home.forms import *
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+from django.views.decorators.csrf import csrf_protect
+from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
+from django.template import RequestContext
+ 
+@csrf_protect
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            user = User.objects.create_user(
+            username=form.cleaned_data['username'],
+            password=form.cleaned_data['password1'],
+            email=form.cleaned_data['email']
+            )
+            return HttpResponseRedirect('/register/success/')
+    else:
+        form = RegistrationForm()
+    variables = RequestContext(request, {
+    'form': form
+    })
+ 
+    return render_to_response(
+    'home/register.html',
+    variables,
+    )
+ 
+def register_success(request):
+    return render_to_response(
+    'home/success.html',
+    )
+ 
+def logout_page(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+ 
+#@login_required
+#def home(request):
+ #   return render_to_response(
+  #  'home.html',
+   # { 'user': request.user }
+   # )
 
 def index(request):
     return render(request, 'home/home.html')
@@ -15,37 +59,6 @@ def tos(request):
 def contact(request):
     return render(request, 'home/contact.html')
 
-def login(request):
-    return render(request, 'home/login.html')
+def job_post(request):
+    return render(request, 'home/job_post.html')
     
-class UserFormView(View):
-    form_class = UserForm
-    template_name = 'home/register.html'
-    
-    #display blank form
-    def get(self, request):
-        form = self.form_class(None)
-        return render(request, self.template_name, {'form': form})
-        
-    #process form data
-    def post(self, request):
-        form = self.form_class(request.POST)
-        
-        if form.is_valid():
-            user = form.save(commit=False)
-            
-            #cleaned (normalized) data
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user.set_password(password)
-            user.save()
-            
-            #returns User objects if credentials are correct
-            user = authenticate(username=username, password=password)
-            
-            if(user != None):
-                if(user.is_active):
-                    login(request, user)
-                    return redirect('home/home.html')
-                    
-        return render(request, self.template_name, {'form': form})

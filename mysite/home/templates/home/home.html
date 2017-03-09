@@ -2,6 +2,8 @@
 {% load staticfiles %}
 
  {% block content %}
+ <p>Welcome {{ user.username }} !!!</p>
+    <a href="/logout/">Logout</a>
         <!-- main-header -->
       <header class="main-header">
           <div class="hero-header">
@@ -80,18 +82,22 @@
                                   <label for="16">Pest Control</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="17" name="SI" value="17">
-                                  <label for="17">Security/Investigation</label>
+                                  <input type="checkbox" id="17" name="RD" value="17">
+                                  <label for="17">Registered Dietitian</label>
+                                </li>  
+                                <li>
+                                  <input type="checkbox" id="18" name="SI" value="18">
+                                  <label for="18">Security/Investigation</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="18" name="TTS" value="18">
-                                  <label for="18">Tutor/Teacher</label>
+                                  <input type="checkbox" id="19" name="TTS" value="19">
+                                  <label for="19">Tutor/Teacher</label>
                                 </li>    
                               </ul>
                       </div>
                     </div>
                   <div class="form-group">
-                   <a class="btn btn-t-primary btn-lg btn-theme btn-pill btn-block" href="#">Find a Service</a>
+                   <a class="btn btn-t-primary btn-lg btn-theme btn-pill btn-block" href="/job_post">Find a Service</a>
                   </div>
                     </div>
                 </form> <!-- end form search -->
@@ -113,7 +119,7 @@
               </div>
               <div class="col-md-4">
                 <h4 class="color-text-2">Services Provided</h4>
-                <h4 class="color-text">18</h4>
+                <h4 class="color-text">19</h4>
               </div>
               <div class="col-md-4">
                 <h4 class="color-text-2">Top Service</h4>
