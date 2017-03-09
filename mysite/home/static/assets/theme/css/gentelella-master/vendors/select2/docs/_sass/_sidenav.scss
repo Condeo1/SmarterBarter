@@ -40,10 +40,10 @@
 
   > li > a:hover,
   > li > a:focus {
-    color: #428BCA;
+    color: #009933;
     text-decoration: none;
     background-color: transparent;
-    border-left-color: #428BCA;
+    border-left-color: #009933;
   }
 
   > .active > a,
@@ -51,9 +51,9 @@
   > .active:focus > a {
     padding-left: 19px;
     font-weight: bold;
-    color: #428BCA;
+    color: #009933;
     background-color: transparent;
-    border-left: 2px solid #428BCA;
+    border-left: 2px solid #009933;
   }
 
   // Nav: second level (shown on .active)
@@ -142,7 +142,7 @@
   color: #999;
 
   &:hover {
-    color: #428BCA;
+    color: #009933;
     text-decoration: none;
   }
 

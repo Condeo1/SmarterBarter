@@ -164,15 +164,15 @@ a:focus {
 }
 .btn-theme.btn-line:hover,
 .btn-theme.btn-line:focus {
-  background: #34485c;
-  border-color: #34485c;
+  background: #00802b;
+  border-color: #00802b;
 }
 .btn-theme.btn-line.dark,
 .btn-theme.btn-line.dark:hover,
 .btn-theme.btn-line.dark:focus {
   background: transparent;
-  border-color: #34485c;
-  color: #34485c;
+  border-color: #00802b;
+  color: #00802b;
 }
 .btn-theme.btn-line.soft,
 .btn-theme.btn-line.soft:hover,
@@ -255,12 +255,12 @@ a:focus {
   border-radius: 50px !important;
 }
 .btn-theme.btn-t-primary {
-  background-color: #34485c;
+  background-color: #00802b;
   color: #ffffff;
   position: relative;
 }
 .btn-theme.btn-t-primary:hover {
-  background: #20354a;
+  background: #009933;
 }
 @media (max-width: 768px) {
   .btn-block-xs {
@@ -301,7 +301,7 @@ a:focus {
 }
 .form-control:focus {
   background: #f5f5f5;
-  border-color: #34485c;
+  border-color: #00802b;
 }
 .application{
   height: 40px;    
@@ -456,8 +456,8 @@ a:focus {
 .flat-radio input:checked + span,
 .flat-checkbox input:checked + span,
 .flat-radio input:checked + span {
-  background-color: #34485c;
-  border-color: #34485c;
+  background-color: #00802b;
+  border-color: #00802b;
 }
 .slider.slider-horizontal {
   width: 100%;
@@ -468,7 +468,7 @@ a:focus {
   height: 3px;
 }
 .slider.slider-horizontal .slider-selection {
-  background: #34485c;
+  background: #00802b;
 }
 .slider.slider-horizontal .slider-handle {
   margin-top: -9px;
@@ -521,7 +521,7 @@ a:focus {
   -moz-box-shadow: none !important;
   -o-box-shadow: none !important;
   -ms-box-shadow: none !important;
-  background: #2a3f54;
+  background: #00802b;
   border: 0;
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
@@ -564,7 +564,7 @@ a:focus {
 .main-navbar .navbar-nav > li.active > a:focus {
   color: #ffffff;
   position: relative;
-  background: #34485c;
+  background: #00802b;
 }
 .main-navbar .navbar-nav > li.dropdown.open > a,
 .main-navbar .navbar-nav > li.dropdown.open > a:hover,
@@ -913,7 +913,7 @@ a:focus {
 .pagination-theme > .active > span:hover,
 .pagination-theme > .active > a:focus,
 .pagination-theme > .active > span:focus {
-  background-color: #34485c;
+  background-color: #00802b;
   border: 0;
 }
 /* 3.e panel
@@ -1032,11 +1032,11 @@ a:focus {
   -ms-border-radius: 3px 3px 0 0 !important;
   -o-border-radius: 3px 3px 0 0 !important;
   border-radius: 3px 3px 0 0 !important;
-  box-shadow: 0 -2px 0 #34485c !important;
-  -webkit-box-shadow: 0 -2px 0 #34485c !important;
-  -moz-box-shadow: 0 -2px 0 #34485c !important;
-  -o-box-shadow: 0 -2px 0 #34485c !important;
-  -ms-box-shadow: 0 -2px 0 #34485c !important;
+  box-shadow: 0 -2px 0 #00802b !important;
+  -webkit-box-shadow: 0 -2px 0 #00802b !important;
+  -moz-box-shadow: 0 -2px 0 #00802b !important;
+  -o-box-shadow: 0 -2px 0 #00802b !important;
+  -ms-box-shadow: 0 -2px 0 #00802b !important;
 }
 .flat-tab-content {
   border-left: 1px solid #e1e1e1;
@@ -1100,7 +1100,7 @@ a:focus {
   border-color: #e1e1e1;
 }
 .bg-color3 {
-  background-color: #34485c;   
+  background-color: #00802b;   
 }
 .bg-color4 {
   background-color: #394e63;
@@ -1412,7 +1412,7 @@ a:focus {
 /* 5.a main-header
 ----------------------------------------------------------------------------- */
 .main-header {
-  background: #34485c;
+  background: #00802b;
 }
 .main-header .logo {
   max-width: 100%;
@@ -1770,7 +1770,7 @@ a:focus {
   -webkit-backface-visibility: hidden;
   background: #ffffff;
   padding: 15px 0 15px;
-  color: #34485c;
+  color: #00802b;
   border-top: 1px solid #e1e1e1;
   border-bottom: 1px solid #e1e1e1;
 }
