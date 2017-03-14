@@ -19,8 +19,11 @@ def register(request):
             user = User.objects.create_user(
             username=form.cleaned_data['id_userName'],
             password=form.cleaned_data['id_password1'],
-            email=form.cleaned_data['email']
+            email=form.cleaned_data['email']    
             )
+           # customer = Customer.objects.create_customer(
+            #bio = form.cleaned_data['bio']
+            #)
             return HttpResponseRedirect('/home/success')
         else:
             #print(form.errors)

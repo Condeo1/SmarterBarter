@@ -2218,3 +2218,8 @@ a:focus {
     height: 50px;
     width: 250px;
 }
+.login-box{
+    margin-left: 50%;
+    margin-top: 50px;
+    text-decoration-color:  white;
+}
