@@ -7,7 +7,7 @@ class Customer(models.Model):
     bio = models.TextField(max_length = 1500)
     
     def __str__(self):
-        return self.userName
+        return self.user.username
     
 class CustomerService(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
@@ -15,7 +15,7 @@ class CustomerService(models.Model):
     needsID = models.CharField(max_length = 60)
     
     def __str__(self):
-        return self.customer.userName
+        return self.customer.user.username
 
     
 
