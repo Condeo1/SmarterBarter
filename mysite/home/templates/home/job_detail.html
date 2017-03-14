@@ -1,0 +1,107 @@
+{% extends 'home/header.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<!-- body-content -->
+      <div class="body-content clearfix" >
+
+        <!-- link top -->
+        <div class="bg-color2 block-section-xs line-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 hidden-xs">
+                <div>Job details :</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="text-right"><a href="/job_post">&laquo; Go back to job listings</a></div>
+              </div>
+            </div>
+          </div>
+        </div><!-- end link top -->
+
+        <div class="bg-color2">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9">
+
+                <!-- box item details -->
+                <div class="block-section-xs box-item-details">
+                  <div class="row">
+                    <div class="col-md-8">
+                        <h2>SmarterBarter</h2>
+                    </div>
+                    <div class="col-md-4">
+                      <p class="text-right"><a href="/faq">More about us &raquo;</a></p>
+                    </div>
+                  </div>
+
+                
+                  <h2 class="title">{{customerservice.customer.user.username}}</h2>
+                  <div class="job-meta">
+                    <ul class="list-inline">
+                      <li class="bg-color3" style="color: white;"><i class="fa fa-briefcase"></i>Job {{customerservice.servicesID}} </li>
+                      <li class="bg-color3" style="color: white;"><i class="fa fa-map-marker"></i> {{customerservice.customer.zipCode}}</li>
+                    </ul>
+                       {{customerservice.customer.bio|safe|linebreaks}}
+                  </div>
+              
+                  <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+              </div><!-- end box item details -->
+                
+            </div>
+            <div class="col-md-3">
+                <!-- box affix right -->
+                <div class="block-section " id="affix-box">
+                  <div class="text-right">
+                      
+                    <p><a href="#modal-apply"  data-toggle="modal" class="btn btn-theme btn-t-primary btn-block-xs">Contact this person</a></p>
+                      
+                      
+                    <p>Share This Job <span class="space-inline-10"></span> :</p>
+                    <p class="share-btns">
+                        
+                      <a href="#" class="btn btn-primary"><i class="fa fa-facebook"></i></a>
+                      <a href="#" class="btn btn-info"><i class="fa fa-twitter"></i></a>
+                      <a href="#" class="btn btn-danger"><i class="fa fa-google-plus"></i></a>
+                      <a href="#" class="btn btn-warning"><i class="fa fa-envelope"></i></a>
+                    </p>
+                  </div>
+                </div><!-- box affix right -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+         
+    <!-- modal apply -->
+        <div class="modal fade" id="modal-apply">
+          <div class="modal-dialog ">
+            <div class="modal-content">
+              <form class="form-horizontal">
+                <div class="modal-header bg-color3">
+                  <h3 class="text-center color-white">Email</h3>
+                </div>
+                  
+                <div class="modal-body">
+                  <div class="form-group">
+                                <h4 class="text-center">Comment Box</h4>
+                                <textarea class="form-control" rows="6" placeholder="Enter Any Additional Information"></textarea>
+                    </div>
+                  </div>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close</button>
+                  <a href="/application/"><button type="submit" class="btn btn-search btn-theme" >Send Email</button></a>
+                </div>
+               
+              </form>
+            </div>
+          </div>
+        </div><!-- end modal  apply -->        
+      </div><!--end body-content -->      
+{% endblock %}
