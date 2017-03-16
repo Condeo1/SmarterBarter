@@ -28,23 +28,25 @@
         
                
                   <!-- item list -->  
-                  <div class="box-list">
-                    {% for Customer in object_list %}
+                  
+                    {% for CustomerService in object_list %}
+                <div class="box-list">    
                     <div class="item">
                       <div class="row">
                         <div class="col-md-11">
-                          <h3 class="no-margin-top"><a href="/job_detail" class="">{{Customer.user.username}}<i class="fa fa-link color-white-mute font-1x"></i></a></h3>
-                          <h5><span class="color-black">CollegeHumor</span> - <span class="color-white-mute">{{Customer.zipCode}}</span></h5>
-                          <p class="text-truncate ">{{Customer.bio}} </p>
+                          <h3 class="no-margin-top"><a href="/job_detail/{{CustomerService.id}}" class="">{{CustomerService.customer.user.username}}<i class="fa fa-link color-white-mute font-1x"></i></a></h3>
+                          <h5><span class="color-black">Location</span> - <span class="color-white-mute">{{CustomerService.customer.zipCode}}</span></h5>
+                          <p class="text-truncate ">{{CustomerService.customer.bio}} </p>
                           <div>
-                            <span class="color-white-mute">{{customer.user.email}}</span> <br>  
-                            <a href="/job_detail" class="btn btn-theme btn-xs btn-default">more ...</a>
+                            <br>  
+                            <a href="/job_detail/{{CustomerService.id}}" class="btn btn-theme btn-xs btn-default">more ...</a>
                           </div>
                         </div>
                       </div>
                     </div>
+                    </div>  <!-- end item list -->  
                     {% endfor %}
-                </div>  <!-- end item list -->
+                
                  
                       
                   <!-- pagination -->
