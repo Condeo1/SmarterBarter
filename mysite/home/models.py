@@ -17,14 +17,18 @@ class Customer(models.Model):
     def __str__(self):
         return self.user.username
     
+
+class customerServiceManager(models.Manager):
+    def makeCustomerService(self, customer, servicesID, needsID):
+        services = self.create(customer=customer, servicesID=servicesID, needsID=needsID)
+        return services
     
 class CustomerService(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     servicesID = models.CharField(max_length = 60)
     needsID = models.CharField(max_length = 60)
     
+    objects = customerServiceManager()
+    
     def __str__(self):
         return self.customer.user.username
-
-    
-

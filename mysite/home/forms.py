@@ -13,6 +13,7 @@ class RegistrationForm(forms.Form):
     lastName = forms.CharField(widget=forms.TextInput(attrs=dict(required=True, max_length=30)), label=_("Last Name"))
     zipCode = forms.IntegerField(widget=forms.NumberInput(attrs=dict(required=True, max_length=5)), label=_("Zip Code"))
     bio = forms.CharField(widget=forms.TextInput(attrs=dict(required=True, max_length=1500)), label=_("Bio"))
+    serviceID = forms.CharField(widget=forms.CheckboxSelectMultiple(attrs=dict(required=True, max_length=100)), label=_("Services"))
  
     def clean_username(self):
         try:

@@ -31,6 +31,13 @@ def register(request):
             )
             customer.save()
             
+            services = CustomerService.objects.makeCustomerService(
+            customer=customer,
+            servicesID=form.cleaned_data['serviceID'],
+            needsID = ""
+            )
+            services.save()
+            
             return HttpResponseRedirect('/home/success')
         else:
             print(form.errors)
