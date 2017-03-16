@@ -13,7 +13,7 @@
                 <div>Job details :</div>
               </div>
               <div class="col-sm-6">
-                <div class="text-right"><a href="/job_post">&laquo; Go back to job listings</a></div>
+                <div><a href="/job_post">&laquo; Go back to job listings</a></div>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@
                   <h2 class="title">{{customerservice.customer.user.username}}</h2>
                   <div class="job-meta">
                     <ul class="list-inline">
-                      <li class="bg-color3" style="color: white;"><i class="fa fa-briefcase"></i>Job {{customerservice.servicesID}} </li>
+                      <li class="bg-color3" style="color: white;"><i class="fa fa-briefcase"></i>Job:  {{customerservice.servicesID}} </li>
                       <li class="bg-color3" style="color: white;"><i class="fa fa-map-marker"></i> {{customerservice.customer.zipCode}}</li>
                     </ul>
                        {{customerservice.customer.bio|safe|linebreaks}}
@@ -60,6 +60,7 @@
                   <div class="text-right">
                       
                     <p><a href="#modal-apply"  data-toggle="modal" class="btn btn-theme btn-t-primary btn-block-xs">Contact this person</a></p>
+                    <span class="color-white-mute">At: {{customerservice.customer.user.email}}</span>   
                       
                       
                     <p>Share This Job <span class="space-inline-10"></span> :</p>
