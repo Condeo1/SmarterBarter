@@ -11,6 +11,8 @@ class RegistrationForm(forms.Form):
     id_password2 = forms.CharField(widget=forms.PasswordInput(attrs=dict(required=True, max_length=30, render_value=False)), label=_("Password (again)"))
     firstName = forms.CharField(widget=forms.TextInput(attrs=dict(required=True, max_length=30)), label=_("First Name"))
     lastName = forms.CharField(widget=forms.TextInput(attrs=dict(required=True, max_length=30)), label=_("Last Name"))
+    zipCode = forms.IntegerField(widget=forms.NumberInput(attrs=dict(required=True, max_length=5)), label=_("Zip Code"))
+    bio = forms.CharField(widget=forms.TextInput(attrs=dict(required=True, max_length=1500)), label=_("Bio"))
  
     def clean_username(self):
         try:
