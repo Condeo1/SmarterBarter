@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
+from home.models import Customer, CustomerService
  
 @csrf_protect
 def register(request):
@@ -22,6 +23,14 @@ def register(request):
             first_name = form.cleaned_data['firstName'],
             last_name = form.cleaned_data['lastName']
             )
+            
+            customer = Customer.objects.makeCustomer(
+            user=user,
+            zipCode=form.cleaned_data['zipCode'],
+            bio = form.cleaned_data['bio']
+            )
+            customer.save()
+            
             return HttpResponseRedirect('/home/success')
         else:
             print(form.errors)
