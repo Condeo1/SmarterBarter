@@ -15,24 +15,22 @@ def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            #print("test 1")
             user = User.objects.create_user(
             username=form.cleaned_data['id_userName'],
             password=form.cleaned_data['id_password1'],
-            email=form.cleaned_data['email']
+            email=form.cleaned_data['email'],
+            first_name = form.cleaned_data['firstName'],
+            last_name = form.cleaned_data['lastName']
             )
             return HttpResponseRedirect('/home/success')
         else:
-            #print(form.errors)
-            #print(form.cleaned_data)
+            print(form.errors)
+            print(form.cleaned_data)
             form = RegistrationForm()
-            #variables =  RequestContext({'form': form})
  
-    #return render_to_response('home/register.html', variables,)
     return render(request, 'home/register.html', {'form': form})
  
 def register_success(request):
-    #return render_to_response('home/success.html',)
     return render(request, 'home/success.html')
  
 def logout_page(request):
