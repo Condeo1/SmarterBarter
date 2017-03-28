@@ -22,6 +22,9 @@ class customerServiceManager(models.Manager):
     def makeCustomerService(self, customer, servicesID, needsID):
         services = self.create(customer=customer, servicesID=servicesID, needsID=needsID)
         return services
+        
+    def updateNeeds(needsID):
+        needsID = needsID
     
 class CustomerService(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)

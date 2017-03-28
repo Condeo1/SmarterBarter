@@ -8,7 +8,7 @@
           <div class="inner-hero-header">
               <div class="relative">
                 <!-- form search -->
-                <form class="form-search-home" method="post" action="job_list.html">
+                <form class="form-search-home" method="post" action="job_list.html">{% csrf_token %}
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
@@ -16,79 +16,79 @@
                               <button data-toggle="dropdown" class="btn btn-t-primary btn-lg btn-block dropdown-toggle">Please select any services</button>
                               <ul class="dropdown-menu pull-center"> 
                                 <li>
-                                  <input type="checkbox" id="Accounting" name="serviceID" value="Accounting">
+                                  <input type="checkbox" id="Accounting" name="needsID" value="Accounting">
                                   <label for="Accounting">Accounting</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Advertising" name="serviceID" value="Advertising">
+                                  <input type="checkbox" id="Advertising" name="needsID" value="Advertising">
                                   <label for="Advertising">Advertising</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Art/Photo" name="serviceID" value="Art/Photo">
+                                  <input type="checkbox" id="Art/Photo" name="needsID" value="Art/Photo">
                                   <label for="Art/Photo">Art/Photo</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Automotive" name="serviceID" value="Automotive">
+                                  <input type="checkbox" id="Automotive" name="needsID" value="Automotive">
                                   <label for="Automotive">Automotive</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Barber/Salon" name="serviceID" value="Barber/Salon">
+                                  <input type="checkbox" id="Barber/Salon" name="needsID" value="Barber/Salon">
                                   <label for="Barber/Salon">Barber/Salon</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Body Mods" name="serviceID" value="Body Mods">
+                                  <input type="checkbox" id="Body Mods" name="needsID" value="Body Mods">
                                   <label for="Body Mods">Body Mods</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Child Care" name="serviceID" value="Child Care">
+                                  <input type="checkbox" id="Child Care" name="needsID" value="Child Care">
                                   <label for="Child Care">Child Care</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Coach/Trainer" name="serviceID" value="Coach/Trainer">
+                                  <input type="checkbox" id="Coach/Trainer" name="needsID" value="Coach/Trainer">
                                   <label for="Coach/Trainer">Coach/Trainer</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Computer Services" name="serviceID" value="Computer Services">
+                                  <input type="checkbox" id="Computer Services" name="needsID" value="Computer Services">
                                   <label for="Computer Services">Computer Services</label>
                                 </li>    
                                 <li>
-                                  <input type="checkbox" id="Construction" name="serviceID" value="Construction">
+                                  <input type="checkbox" id="Construction" name="needsID" value="Construction">
                                   <label for="Construction">Construction</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Cooking Services" name="serviceID" value="Cooking Services">
+                                  <input type="checkbox" id="Cooking Services" name="needsID" value="Cooking Services">
                                   <label for="Cooking Services">Cooking Services</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Event Planner" name="serviceID" value="Event Planner">
+                                  <input type="checkbox" id="Event Planner" name="needsID" value="Event Planner">
                                   <label for="Event Planner">Event Planner</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Home Care" name="serviceID" value="Home Care">
+                                  <input type="checkbox" id="Home Care" name="needsID" value="Home Care">
                                   <label for="Home Care">Home Care</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Medical" name="serviceID" value="Medical">
+                                  <input type="checkbox" id="Medical" name="needsID" value="Medical">
                                   <label for="Medical">Medical</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Outdoor Care" name="serviceID" value="Outdoor Care">
+                                  <input type="checkbox" id="Outdoor Care" name="needsID" value="Outdoor Care">
                                   <label for="Outdoor Care">Outdoor Care</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Pest Control" name="serviceID" value="Pest Control">
+                                  <input type="checkbox" id="Pest Control" name="needsID" value="Pest Control">
                                   <label for="Pest Control">Pest Control</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Registered Dietitian" name="serviceID" value="Registered Dietitian">
+                                  <input type="checkbox" id="Registered Dietitian" name="needsID" value="Registered Dietitian">
                                   <label for="Registered Dietitian">Registered Dietitian</label>
                                 </li>  
                                 <li>
-                                  <input type="checkbox" id="Security/Investigation" name="serviceID" value="Security/Investigation">
+                                  <input type="checkbox" id="Security/Investigation" name="needsID" value="Security/Investigation">
                                   <label for="Security/Investigation">Security/Investigation</label>
                                 </li>
                                 <li>
-                                  <input type="checkbox" id="Tutor/Teacher" name="serviceID" value="Tutor/Teacher">
+                                  <input type="checkbox" id="Tutor/Teacher" name="needsID" value="Tutor/Teacher">
                                   <label for="Tutor/Teacher">Tutor/Teacher</label>
                                 </li>    
                               </ul>

@@ -34,7 +34,7 @@ def register(request):
             services = CustomerService.objects.makeCustomerService(
             customer=customer,
             servicesID=form.cleaned_data['serviceID'],
-            needsID = ""
+            needsID=form.cleaned_data['needsID']
             )
             services.save()
             
@@ -61,7 +61,10 @@ def logout_page(request):
    # )
 
 def index(request):
-    return render(request, 'home/home.html')
+    form = HomeForm(request.POST)
+    if request.method == 'POST':
+        request.CustomerService.updateNeeds(needsID=form.cleaned_data['needsID'])
+    return render(request, 'home/home.html', {'form': form})
     
 def faq(request):
     return render(request, 'home/faq.html')
