@@ -4,3 +4,4 @@ mysite/home/migrations/__pycache__/0003_auto_20170316_1032.cpython-34.pyc
 *.pyc
 mysite/home/migrations/__pycache__/0003_auto_20170316_1032.cpython-34.pyc
 mysite/home/migrations/0002_auto_20170316_1030.py
+mysite/mysite/settings.py

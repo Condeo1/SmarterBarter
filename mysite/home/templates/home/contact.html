@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block content %}
-    <div class="body-content clearfix" >
+    <div class="body-content clearfix" style="height: 100%;" >
       <div class="bg-color2 block-section-lg line-bottom">
         <div class="container">
           <h2 class="text-center">Contact Us</h2>
@@ -16,19 +16,19 @@
           
           <br>
 
-        <form>      
+        <form method="post" action=".">{% csrf_token %}       
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2">
                                <div class="form-group">
-                                <h4 class="text-center">Comment Box</h4>
-                                <textarea class="form-control" rows="6" placeholder="Enter Any Additional Information"></textarea>
+                                <label for="emailMessage" class="text-center">Comment Box</label>
+                                <textarea id="emailMessage" class="form-control" rows="6" placeholder="Enter Any Additional Information" name="emailMessage"></textarea>
                                 </div>
                                 
                                 <br>
                                 
                                 <div class="form-action">
-                                    <a href="#modal" data-toggle="modal"><button class="btn btn-t-primary btn-theme">Send Email</button></a>
+                                    <a href="#modal" data-toggle="modal"><button class="btn btn-t-primary btn-theme" value="">Send Email</button></a>
                                 </div>
                                 
                             </div>    
