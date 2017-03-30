@@ -60,10 +60,20 @@ def logout_page(request):
    # { 'user': request.user }
    # )
 
+@csrf_protect
 def index(request):
     form = HomeForm(request.POST)
     if request.method == 'POST':
-        request.CustomerService.updateNeeds(needsID=form.cleaned_data['needsID'])
+        if form.is_valid():
+            newNeeds = request.user.customer.customerservice.needsid = form.cleaned_data['needsID']
+            
+            newNeeds.save()
+            #needsID=form.cleaned_data['needsID']
+            #newNeeds = CustomerService.objects.updateNeeds(needsID)
+            #newNeeds.save()
+        else:
+            print(form.errors)
+            print(form.cleaned_data)    
     return render(request, 'home/home.html', {'form': form})
     
 def faq(request):
@@ -75,6 +85,19 @@ def tos(request):
 def contact(request):
     return render(request, 'home/contact.html')
 
-def job_post(request):
-    return render(request, 'home/job_post.html')
+def Post_list(request):
+    queryset_list = CustomerService.objects.all()
+    paginator = Paginator(queryset_list, 1)
+
+    page = request.GET.get('page', 1)
+    try:
+        queryset = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        queryset = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        queryset = paginator.page(paginator.num_pages)
+
+    return render(request, 'home/job_post.html', {'object_list': queryset})
     
