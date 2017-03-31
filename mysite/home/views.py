@@ -78,7 +78,8 @@ def index(request):
             return HttpResponseRedirect('job_post/')
         else:
             print(form.errors)
-            print(form.cleaned_data)    
+            print(form.cleaned_data)
+            return HttpResponseRedirect('job_post/')
     return render(request, 'home/home.html', {'form': form})
 
 #def needs_success(request):
