@@ -27,7 +27,7 @@ class customerServiceManager(models.Manager):
         needsID = needsID
     
 class CustomerService(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    customer = models.OneToOneField(Customer, on_delete=models.CASCADE)
     servicesID = models.CharField(max_length = 60)
     needsID = models.CharField(max_length = 60)
     

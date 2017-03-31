@@ -65,9 +65,13 @@ def index(request):
     form = HomeForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
-            newNeeds = request.user.customer.customerservice.needsid = form.cleaned_data['needsID']
-            
-            newNeeds.save()
+            #needsID=form.cleaned_data['needsID']
+            service = CustomerService.objects.get(pk=request.user.customer.customerservice.id)
+            service.needsID = form.cleaned_data['needsID']
+            service.save()
+            #newNeeds = request.user.customer.customerservice.objects.get(needsID = needsID)
+            #newNeeds = form.cleaned_data['needsID']
+            #newNeeds.save()
             #needsID=form.cleaned_data['needsID']
             #newNeeds = CustomerService.objects.updateNeeds(needsID)
             #newNeeds.save()
