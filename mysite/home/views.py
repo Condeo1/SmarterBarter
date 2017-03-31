@@ -75,10 +75,14 @@ def index(request):
             #needsID=form.cleaned_data['needsID']
             #newNeeds = CustomerService.objects.updateNeeds(needsID)
             #newNeeds.save()
+            return HttpResponseRedirect('job_post/')
         else:
             print(form.errors)
             print(form.cleaned_data)    
     return render(request, 'home/home.html', {'form': form})
+
+#def needs_success(request):
+ #   return render(request, 'home/job_post.html')
     
 def faq(request):
     return render(request, 'home/faq.html')
