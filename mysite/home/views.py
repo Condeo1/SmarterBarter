@@ -95,18 +95,33 @@ def contact(request):
     return render(request, 'home/contact.html')
 
 def Post_list(request):
-    queryset_list = CustomerService.objects.all()
-    paginator = Paginator(queryset_list, 1)
+    if request.user.is_authenticated():
+        #queryset_list = CustomerService.objects.all()
+        queryset_list = CustomerService.objects.all()
+        
+        user = CustomerService.objects.get(pk=request.user.customer.id)
+        #service = user.servicesID.split(",")
+        #need = user.needsID.split(",")
+        zip = user.customer.zipCode
+        customers_list = Customer.objects.all()
+        #customers_list.filter(user = request.user).delete()
+        matchedUsers_list = customers_list.filter(zipCode = zip)
+                
+        return render(request, 'home/job_post.html', {'object_list': matchedUsers_list})
+    # queryset_list = CustomerService.objects.all()
+    # paginator = Paginator(queryset_list, 1)
 
-    page = request.GET.get('page', 1)
-    try:
-        queryset = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
-        queryset = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
-        queryset = paginator.page(paginator.num_pages)
-
-    return render(request, 'home/job_post.html', {'object_list': queryset})
+    # page = request.GET.get('page', 1)
+    # try:
+        # queryset = paginator.page(page)
+    # except PageNotAnInteger:
+        # # If page is not an integer, deliver first page.
+        # queryset = paginator.page(1)
+    # except EmptyPage:
+        # # If page is out of range (e.g. 9999), deliver last page of results.
+        # queryset = paginator.page(paginator.num_pages)
+    
+    else:
+        queryset_list = CustomerService.objects.all()
+        return render(request, 'home/job_post.html', {'object_list': queryset_list})
     
