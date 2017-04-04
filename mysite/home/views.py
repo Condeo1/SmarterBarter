@@ -99,13 +99,12 @@ def Post_list(request):
         #queryset_list = CustomerService.objects.all()
         queryset_list = CustomerService.objects.all()
         
-        user = CustomerService.objects.get(pk=request.user.customer.id)
+        #user = CustomerService.objects.get(pk=request.user.customer.id)
         #service = user.servicesID.split(",")
         #need = user.needsID.split(",")
-        zip = user.customer.zipCode
-        customers_list = Customer.objects.all()
-        #customers_list.filter(user = request.user).delete()
-        matchedUsers_list = customers_list.filter(zipCode = zip)
+        zip = request.user.customer.zipCode
+        customers_list = CustomerService.objects.all()
+        matchedUsers_list = customers_list.filter(customer__zipCode = zip)
                 
         return render(request, 'home/job_post.html', {'object_list': matchedUsers_list})
     # queryset_list = CustomerService.objects.all()
