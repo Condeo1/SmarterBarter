@@ -19,11 +19,6 @@
                     <div class="col-sm-6  ">
                       <p><strong class="color-black">Smarter to Barter</strong></p>
                     </div>
-                    <div class="col-sm-6">
-                      <p class="text-right">
-                        Jobs 1 to 10 of 578
-                      </p>
-                    </div>
                   </div><!-- end desc top -->
         
                
@@ -50,48 +45,32 @@
                  
                       
                   <!-- pagination -->
-                    {% if object_list.has_other_pages %}
-                    <ul class="pagination pagination-theme no-margin">
-                        <span class="step-links">
-                            {% if object_list.has_previous %}
-                                <li><a href="?page={{ object_list.previous_page_number }}">previous</a></li>
-                            {% else %}
-                                <li class="disabled"><span>&laquo;</span></li>
-                            {% endif %}
-                            
-                            {% for i in object_list.paginator.page_range %}
-                            
-                            {% if object_list.number == i %}
-                                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-                              {% else %}
-                                <li><a href="?page={{ i }}">{{ i }}</a></li>
-                              {% endif %}
-                            {% endfor %}
-                            {% if object_list.has_next %}
-                              <li><a href="?page={{ object_list.next_page_number }}">&raquo;</a></li>
-                            {% else %}
-                              <li class="disabled"><span>&raquo;</span></li>
-                            {% endif %}
-                          </ul>
-                        {% endif %}
-                  <nav >
-                    <ul class="pagination pagination-theme  no-margin">
-                      <li>
-                        <a href="#" aria-label="Previous">
-                          <span aria-hidden="true">&larr;</span>
-                        </a>
-                      </li>
-                      <li class="active"><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><span>...</span></li>
-                      <li><a href="#">50</a></li>
-                      <li>
-                        <a href="#" aria-label="Next">
-                          <span aria-hidden="true">&rarr;</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav><!-- pagination -->
+                        
+                        <div class="pagination">
+                            <ul class="pagination pagination-theme  no-margin">
+                                
+                                    {% if object_list.has_previous %}
+                                        <li class="step-links">
+                                            <a href="?page={{ object_list.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">&larr;</span></a>
+                                        </li>
+                                    {% endif %}
+                                    
+                                    
+                                    <li class="active current"><a href="{{ object_list.number }}">{{ object_list.number }}</a></li>
+                                    <li><span>...</span></li>
+                                    <li><a href="?page={{ object_list.paginator.num_pages }}">{{ object_list.paginator.num_pages }}</a></li>
+
+                                    {% if object_list.has_next %}
+                                        <li class="step-links">
+                                            <a href="?page={{ object_list.next_page_number }}" aria-label="Next">
+                                              <span aria-hidden="true">&rarr;</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                </span>
+                            </ul>
+                        </div>
+                  <!-- pagination -->
 
                 </div><!-- end box listing -->
 
