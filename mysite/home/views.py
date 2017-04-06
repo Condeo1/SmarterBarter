@@ -33,8 +33,8 @@ def register(request):
             
             services = CustomerService.objects.makeCustomerService(
             customer=customer,
-            servicesID=form.cleaned_data['serviceID'],
-            needsID=form.cleaned_data['needsID']
+            servicesID=form.cleaned_data['serviceID']
+            #needsID=form.cleaned_data['needsID']
             )
             services.save()
             
@@ -100,11 +100,13 @@ def Post_list(request):
         queryset_list = CustomerService.objects.all()
         
         #user = CustomerService.objects.get(pk=request.user.customer.id)
-        #service = user.servicesID.split(",")
-        #need = user.needsID.split(",")
+        service = request.user.customer.customerservice.servicesID.split(", ")
+        need = request.user.customer.customerservice.needsID.split(", ")
         zip = request.user.customer.zipCode
         customers_list = CustomerService.objects.all()
         matchedUsers_list = customers_list.filter(customer__zipCode = zip)
+        print(need)
+        print(service)
                 
         return render(request, 'home/job_post.html', {'object_list': matchedUsers_list})
     # queryset_list = CustomerService.objects.all()

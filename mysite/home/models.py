@@ -19,12 +19,9 @@ class Customer(models.Model):
     
 
 class customerServiceManager(models.Manager):
-    def makeCustomerService(self, customer, servicesID, needsID):
-        services = self.create(customer=customer, servicesID=servicesID, needsID=needsID)
+    def makeCustomerService(self, customer, servicesID):
+        services = self.create(customer=customer, servicesID=servicesID, needsID="")
         return services
-        
-    def updateNeeds(needsID):
-        needsID = needsID
     
 class CustomerService(models.Model):
     customer = models.OneToOneField(Customer, on_delete=models.CASCADE)

@@ -14,7 +14,7 @@ class RegistrationForm(forms.Form):
     zipCode = forms.IntegerField(widget=forms.NumberInput(attrs=dict(required=True, max_length=5)), label=_("Zip Code"))
     bio = forms.CharField(widget=forms.TextInput(attrs=dict(required=True, max_length=1500)), label=_("Bio"))
     serviceID = forms.CharField(widget=forms.CheckboxSelectMultiple(attrs=dict(required=True, max_length=100)), label=_("Services"))
-    needsID = forms.CharField(widget=forms.CheckboxSelectMultiple(attrs=dict(required=True, max_length=100)), label=_("Needs"))
+    #needsID = forms.CharField(widget=forms.CheckboxSelectMultiple(attrs=dict(required=True, max_length=100)), label=_("Needs"))
  
     def clean_username(self):
         try:
