@@ -101,27 +101,14 @@ def Post_list(request):
         zip = request.user.customer.zipCode
         customers_list = CustomerService.objects.all()
         matchedUsers_list = customers_list.filter(customer__zipCode = zip)
-        matchedUsersTwo_list = matchedUsers_list
-        matchedUsersThree_list = CustomerService.objects.none()
-        serviceList = matchedUsersTwo_list.values_list('servicesID', flat=True)
-     
         
-        for x in need:
-            for y in serviceList:
-                if y.find(x):
-                    matchedUsersThree_list=matchedUsersTwo_list.filter(y)
+        for userneed in need:
+            matchedUsers_list = matchedUsers_list.filter(servicesID__icontains = userneed)
             
-        
-#        query=Q()
-#        serviceList = matchedUsersTwo_list.values_list('servicesID', flat=True)
-#        for service in serviceList:
-#            query = query | Q(servicesID__contains=need)
-#        matchedUsersTwo_list = matchedUsersTwo_list.filter(query)
-        
-        print(need)
-        print(service)
-        
-        paginator = Paginator(matchedUsersThree_list, 4)
+        for userservice in service:
+            matchedUsers_list = matchedUsers_list.filter(needsID__icontains = userservice)
+            
+        paginator = Paginator(matchedUsers_list, 4)
         page = request.GET.get('page', 1)
         
         try:

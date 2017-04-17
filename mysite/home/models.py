@@ -25,8 +25,8 @@ class customerServiceManager(models.Manager):
     
 class CustomerService(models.Model):
     customer = models.OneToOneField(Customer, on_delete=models.CASCADE)
-    servicesID = models.CharField(max_length = 60)
-    needsID = models.CharField(max_length = 60)
+    servicesID = models.CharField(max_length = 600)
+    needsID = models.CharField(max_length = 600)
     
     objects = customerServiceManager()
     
