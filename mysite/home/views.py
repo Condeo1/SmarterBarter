@@ -10,6 +10,8 @@ from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from home.models import Customer, CustomerService
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from functools import reduce
+from django.db.models import Q
  
 @csrf_protect
 def register(request):
@@ -54,28 +56,17 @@ def logout_page(request):
     logout(request)
     return HttpResponseRedirect('/')
  
-#@login_required
-#def home(request):
- #   return render_to_response(
-  #  'home.html',
-   # { 'user': request.user }
-   # )
+
 
 @csrf_protect
 def index(request):
     form = HomeForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
-            #needsID=form.cleaned_data['needsID']
             service = CustomerService.objects.get(pk=request.user.customer.customerservice.id)
             service.needsID = form.cleaned_data['needsID']
             service.save()
-            #newNeeds = request.user.customer.customerservice.objects.get(needsID = needsID)
-            #newNeeds = form.cleaned_data['needsID']
-            #newNeeds.save()
-            #needsID=form.cleaned_data['needsID']
-            #newNeeds = CustomerService.objects.updateNeeds(needsID)
-            #newNeeds.save()
+            
             return HttpResponseRedirect('job_post/')
         else:
             print(form.errors)
@@ -83,9 +74,7 @@ def index(request):
             return HttpResponseRedirect('job_post/')
     return render(request, 'home/home.html', {'form': form})
 
-#def needs_success(request):
- #   return render(request, 'home/job_post.html')
-    
+
 def faq(request):
     return render(request, 'home/faq.html')
     
@@ -99,16 +88,40 @@ def Post_list(request):
     if request.user.is_authenticated():
         queryset_list = CustomerService.objects.all()
         
-        service = request.user.customer.customerservice.servicesID.split(", ")
-        need = request.user.customer.customerservice.needsID.split(", ")
+        service = request.user.customer.customerservice.servicesID
+        need = request.user.customer.customerservice.needsID
+        need.lstrip('[')
+        need.rstrip(']')
+        need.split(", ")
+        
+        service.lstrip('[')
+        service.rstrip(']')
+        service.split(", ")
+       
         zip = request.user.customer.zipCode
         customers_list = CustomerService.objects.all()
         matchedUsers_list = customers_list.filter(customer__zipCode = zip)
+        matchedUsersTwo_list = matchedUsers_list
+        matchedUsersThree_list = CustomerService.objects.none()
+        serviceList = matchedUsersTwo_list.values_list('servicesID', flat=True)
+     
+        
+        for x in need:
+            for y in serviceList:
+                if y.find(x):
+                    matchedUsersThree_list=matchedUsersTwo_list.filter(y)
+            
+        
+#        query=Q()
+#        serviceList = matchedUsersTwo_list.values_list('servicesID', flat=True)
+#        for service in serviceList:
+#            query = query | Q(servicesID__contains=need)
+#        matchedUsersTwo_list = matchedUsersTwo_list.filter(query)
         
         print(need)
         print(service)
         
-        paginator = Paginator(matchedUsers_list, 4)
+        paginator = Paginator(matchedUsersThree_list, 4)
         page = request.GET.get('page', 1)
         
         try:
